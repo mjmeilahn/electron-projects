@@ -1,1 +1,1 @@
-# electron-projects
+# Electron Projects
