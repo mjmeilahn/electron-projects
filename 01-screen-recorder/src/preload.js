@@ -1,7 +1,6 @@
 
-const { contextBridge, ipcRenderer, dialog } = require('electron')
+const { contextBridge, ipcRenderer } = require('electron')
 const { Blob, Buffer } = require('buffer')
-const { writeFile } = require('fs')
 
 contextBridge.exposeInMainWorld('api', {
     reqs: async (channel, data) => {
@@ -9,7 +8,7 @@ contextBridge.exposeInMainWorld('api', {
             return ipcRenderer.sendSync('capture', data)
         }
         else if (channel === 'save') {
-            const blob = new Blob([data], {
+            const blob = new Blob(Object.values(data), {
                 type: 'video/webm; codecs=vp9'
             })
             const buffer = Buffer.from(await blob.arrayBuffer())

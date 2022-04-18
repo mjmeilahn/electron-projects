@@ -57,6 +57,7 @@ async function selectSource (source) {
     }
 
     const stream = await navigator.mediaDevices.getUserMedia(constraints)
+    console.log(stream)
 
     /*
     !!!! NOT WORKING !!!!
@@ -82,7 +83,7 @@ function handleDataAvailable (e) {
 
 // SAVE THE VIDEO FILE ON STOP
 function handleStop (e) {
-    window.api.reqs('save', ...recordedChunks)
+    window.api.reqs('save', Object.assign({}, recordedChunks))
 }
 
 fetchSources()
