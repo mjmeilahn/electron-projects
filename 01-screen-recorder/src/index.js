@@ -1,5 +1,5 @@
 
-const { app, BrowserWindow, ipcMain, desktopCapturer } = require('electron')
+const { app, BrowserWindow, ipcMain, dialog, desktopCapturer } = require('electron')
 const path = require('path')
 const { writeFile } = require('fs')
 
@@ -58,10 +58,11 @@ ipcMain.on('capture', async (event, args) => {
   event.returnValue = inputSources
 })
 
-ipcMain.on('dialog', async (event, args) => {
-  // event.returnValue = dialog
-})
-
-ipcMain.on('write', async (event, args) => {
-  event.returnValue = writeFile
+ipcMain.on('save', async (event, args) => {
+  const { filePath } = await dialog.showSaveDialog({
+      buttonLabel: 'Save Video',
+      defaultPath: `video-${Date.now()}.webm`
+  })
+  console.log('File path: ' + filePath)
+  writeFile(filePath, args, () => { console.log('UPDATE: Video Saved Successfully.') })
 })

@@ -58,7 +58,13 @@ async function selectSource (source) {
 
     const stream = await navigator.mediaDevices.getUserMedia(constraints)
 
-    // PREVIEW IN <video>
+    /*
+    !!!! NOT WORKING !!!!
+
+    1. Look at my setup to see if it's a permission issue.
+    2. Look at stream created from navigator.mediaDevices.getUserMedia()
+    3. Find other examples on Stack Overflow and pray.
+    */
     videoElement.srcObject = stream
     videoElement.play()
 
@@ -71,27 +77,12 @@ async function selectSource (source) {
 
 // CAPTURES ALL RECORDED CHUNKS
 function handleDataAvailable (e) {
-    console.log('Video Data Available')
     recordedChunks.push(e.data)
 }
 
 // SAVE THE VIDEO FILE ON STOP
-async function handleStop (e) {
-    const blob = new Blob(recordedChunks, {
-        type: 'video/webm; codecs=vp9'
-    })
-
-
-
-    // BUFFER, DIALOG AND WRITEFILE ARE NODE PROPERTIES
-    const buffer = Buffer.from(await blob.arrayBuffer())
-    const dialog = await window.api.reqs('dialog')
-    const { filePath } = await dialog.showSaveDialog({
-        buttonLabel: 'Save Video',
-        defaultPath: `video-${Date.now()}.webm`
-    })
-    console.log('File path: ' + filePath)
-    writeFile(filePath, buffer, () => { console.log('Video Saved Successfully.') })
+function handleStop (e) {
+    window.api.reqs('save', ...recordedChunks)
 }
 
 fetchSources()
