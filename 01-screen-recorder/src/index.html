@@ -2,11 +2,20 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
+    <title>🎥 Screen Recorder</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
     <link rel="stylesheet" href="index.css" />
+    <script defer src="render.js"></script>
   </head>
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
+    <h1>🎥 Screen Recorder</h1>
+    <video></video>
+    <button id="startBtn" class="button is-primary">Start</button>
+    <button id="stopBtn" class="button is-warning">Stop</button>
+    <hr>
+    <select class="select" name="videoSelector" id="videoSelectOptions">
+      <option disabled selected value>Choose a Video Source</option>
+    </select>
+    <button id="refreshBtn" class="button is-info">Refresh Sources</button>
   </body>
 </html>

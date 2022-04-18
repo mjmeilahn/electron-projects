@@ -2,7 +2,7 @@
   "name": "01-screen-recorder",
   "productName": "01-screen-recorder",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -12,10 +12,6 @@
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],
-  "author": {
-    "name": "mjmeilahn",
-    "email": "mjmeilahn@gmail.com"
-  },
   "license": "MIT",
   "config": {
     "forge": {
