@@ -60,7 +60,6 @@ async function selectSource (source) {
     video.srcObject = stream
     console.log(video.srcObject)
     video.play()
-    // video.onloadedmetadata = e => video.play()
 
     // CREATE THE RECORDER & SEND STREAM
     const chunks = []
