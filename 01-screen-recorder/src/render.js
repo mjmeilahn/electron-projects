@@ -21,20 +21,20 @@ async function fetchSources() {
 }
 
 const startBtn = document.getElementById('startBtn')
-startBtn.onclick = e => {
+startBtn.onclick = function () {
     recorder.start()
     startBtn.classList.add('is-danger')
     startBtn.innerText = 'Recording'
 }
 
 const stopBtn = document.getElementById('stopBtn')
-stopBtn.onclick = e => {
+stopBtn.onclick = function () {
     recorder.stop()
     startBtn.classList.remove('is-danger')
     startBtn.innerText = 'Start'
 }
 
-document.getElementById('refreshBtn').onclick = e => {
+document.getElementById('refreshBtn').onclick = function () {
     fetchSources()
 }
 
@@ -66,7 +66,7 @@ async function selectSource (source) {
     const chunks = []
     const options = { mimeType: 'video/webm; codecs=vp9' }
     recorder = new MediaRecorder(stream, options)
-    recorder.ondataavailable = e => chunks.push(e.data)
+    recorder.ondataavailable = function (e) { chunks.push(e.data) }
     recorder.onstop = () => window.api.reqs('save', Object.assign({}, chunks))
 }
 

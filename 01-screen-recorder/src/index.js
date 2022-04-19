@@ -2,6 +2,7 @@
 const { app, BrowserWindow, ipcMain, dialog, desktopCapturer } = require('electron')
 const path = require('path')
 const { writeFile } = require('fs')
+const { Blob, Buffer } = require('buffer')
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -59,10 +60,13 @@ ipcMain.on('capture', async (event, args) => {
 })
 
 ipcMain.on('save', async (event, args) => {
+  const blob = new Blob(Object.values(args), {
+    type: 'video/webm; codecs=vp9'
+  })
+  const buffer = Buffer.from(await blob.arrayBuffer())
   const { filePath } = await dialog.showSaveDialog({
       buttonLabel: 'Save Video',
       defaultPath: `video-${Date.now()}.webm`
   })
-  console.log('File path: ' + filePath)
-  writeFile(filePath, args, () => { console.log('UPDATE: Video Saved Successfully.') })
+  writeFile(filePath, buffer, () => { console.log('UPDATE: Video Saved to ' + filePath) })
 })
