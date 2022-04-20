@@ -9,7 +9,7 @@ NOTES on Abilities:
 - Front End Developers are able to use HTML, CSS, Browser and Server-Side JavaScript into immediate desktop software applications.
 - Can communicate with remote APIs and Databases via an Internet connection.
 - Can open local files in their respective native applications e.g. a JPG or PDF in Preview.
-- Can read and save local files.
+- Can read, edit, save and delete local files. It is possible to use a localized JSON file as a mini-database for CRUD. Use cases will vary, exercise with caution.
 - Can be represented as an icon in the "Tray" menu with settings you can adjust.
 - Can hide its source code in the exportable file.
 
