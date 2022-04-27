@@ -1,6 +1,6 @@
 {
-  "name": "01-screen-recorder",
-  "productName": "01-screen-recorder",
+  "name": "electron-starter",
+  "productName": "Electron Starter",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",

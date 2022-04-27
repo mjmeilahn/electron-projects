@@ -5,6 +5,8 @@ TODO - Look into automating distributables for all operating systems (OS)
 
 1. Screen Recorder - Fetches all open software apps, the user chooses which to record. When the recording is stopped an exportable file is created where the user can choose where it is saved locally on their computer.
 
+2. Bare Bones Starter - All the files and folders you would need on an Electron project. This starter is a bare minimum, unopinionated solution. Important to use this version over Electron's Starter due it does not include necessary parts that belong in every Electron project.
+
 
 ### Abilities
 - Front End Developers are able to use HTML, CSS, Browser and Server-Side JavaScript for creating desktop software applications.
