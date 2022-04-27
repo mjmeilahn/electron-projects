@@ -1,23 +1,21 @@
 # Electron Projects
 Explores core Electron, capabilities and limitations of JS software.
 
-## TODO
-Look into automating distributables for all operating systems (OS)
-
+TODO - Look into automating distributables for all operating systems (OS)
 
 1. Screen Recorder - Fetches all open software apps, the user chooses which to record. When the recording is stopped an exportable file is created where the user can choose where it is saved locally on their computer.
 
 
 ### Abilities
-- Front End Developers are able to use HTML, CSS, Browser and Server-Side JavaScript into immediate desktop software applications.
-- Can communicate with remote APIs and Databases via an Internet connection.
-- Can open local files in their respective native applications e.g. a JPG or PDF in Preview.
-- Can read, edit, save and delete local files. It is possible to use a localized JSON file as a mini-database for CRUD. Use cases will vary, exercise with caution.
-- Can be represented as an icon in the "Tray" menu with settings you can adjust.
-- Can hide its source code in the exportable file.
+- Front End Developers are able to use HTML, CSS, Browser and Server-Side JavaScript for creating desktop software applications.
+- Easy to communicate with remote APIs and Databases via an Internet connection.
+- Easy to open local files in their respective native applications e.g. a JPG or PDF in Preview.
+- Easy to read, edit, save and delete local files. It is possible to use a localized JSON file as a mini-database for CRUD. Use cases will vary, exercise with caution.
+- Application can be represented as an icon in the "Tray" menu with settings you can adjust.
+- Application can hide its source code in the exportable file.
 
 ### Limitations
-- Bulky export file eats a ton of CPU at run-time.
+- Bulky export file eats a ton of CPU at run-time. Need to look into optimizations.
 - Outdated practices for using Electron are scattered across the internet that expose Node internals to the Front End. Use the structure outlined in the following projects for best practices.
 
 ### Deployment
