@@ -11,7 +11,7 @@ TODO - Look into automating distributables for all operating systems (OS)
 
 
 ### Abilities
-- Front End Developers are able to use HTML, CSS, Browser and Server-Side JavaScript for creating desktop software applications.
+- Front End Developers are able to use HTML, CSS, Browser JavaScript and Server-Side JavaScript to create desktop software applications.
 - Easy to communicate with remote APIs and Databases via an Internet connection.
 - Easy to open local files in their respective native applications e.g. a JPG or PDF in Preview.
 - Easy to read, edit, save and delete local files. It is possible to use a localized JSON file as a mini-database for CRUD. Use cases will vary, exercise with caution.
